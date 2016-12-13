@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style type="text/css">
+        .clearfix::before,
+        .clearfix::after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+
+        .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        .right {
+            height: 300px;
+            background-color: blue;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container .clearfix">
+    <textarea name="" id="" cols="30" rows="10" class="left">右下角拉动我</textarea>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

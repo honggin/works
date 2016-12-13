@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style type="text/css">
+        .container {
+            display: flex;
+            border: 1px dashed black;
+        }
+
+        .left {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .content {
+            flex: 1;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .right {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <pre class="code">
+        .container {
+            display: flex;
+            border: 1px dashed black;
+        }
+
+        .left {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .content {
+            flex: 1;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .right {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+    </pre>
+    <div class="container">
+        <div class="left"></div>
+        <div class="content"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

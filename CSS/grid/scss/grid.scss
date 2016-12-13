@@ -1,0 +1,66 @@
+$bdcolor    : #999;
+$bgcolor    : #eee;
+$space      : 20px;
+$height     : 50px;
+$max-column : 12;
+$breakpoints: (
+    'sm'    : 'screen and (max-width: 768px)',
+    'md'    : 'screen and (min-width: 769px)' 
+);
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+@mixin generateGrid($type) {
+    $query: map-get($breakpoints, $type);
+
+    @if not $query {
+        @error 'wrong type';
+    }
+    @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+        @for $i from 1 through $max-column {
+            .col-#{$type}-#{$i} {
+                width: $i/$max-column*100%;
+            }
+        }
+    }
+}
+
+.row:before,
+.row:after {
+    @include clearfix;
+}
+
+
+
+[class*="col-"] {
+    display: block;
+    float: left;
+    min-height: 1px;
+}
+
+.container {
+    padding: $space/2;
+}
+
+.inner {
+    border: 1px solid $bdcolor;
+    text-align: center;
+    margin: 10px;
+    background-color: $bgcolor;
+    height: $height;
+    line-height: $height;
+}
+
+@include generateGrid('sm');
+@include generateGrid('md');

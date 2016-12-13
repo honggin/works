@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            border: 1px dashed #000;
+        }
+
+        .left,
+        .content,
+        .right {
+            display: table-cell;
+        }
+
+        .left {
+            width: 100px;
+            height: 400px;
+            background-color: blue;
+        }
+
+        .right {
+            width: 200px;
+            background-color: green;
+        }
+
+        .content {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <pre class="code">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            border: 1px dashed #000;
+        }
+
+        .left,
+        .content,
+        .right {
+            display: table-cell;
+        }
+
+        .left {
+            width: 100px;
+            height: 400px;
+            background-color: blue;
+        }
+
+        .right {
+            width: 200px;
+            background-color: green;
+        }
+
+        .content {
+            background-color: yellow;
+        }
+    </pre>
+    <div class="container">
+        <div class="left"></div>
+        <div class="content"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

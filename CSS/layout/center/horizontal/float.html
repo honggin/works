@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style type="text/css">
+        .wrap {
+            height: 200px;
+            background-color: green;
+        }
+
+        .outer {
+            float: left;
+            position: relative;
+            left: 50%;
+        }
+
+        .inner {
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <pre class="code">
+        .wrap {
+            height: 300px;
+            background-color: green;
+        }
+
+        .outer {
+            float: left;
+            position: relative;
+            left: 50%;
+        }
+
+        .inner {
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </pre>
+    <div class="wrap">
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+    </div>
+</body>
+</html>

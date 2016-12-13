@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>absolute</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style type="text/css">
+        .wrap {
+            position: relative;
+            height: 200px;
+            background-color: green;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <pre class="code">
+        .wrap {
+            height: 200px;
+            background-color: green;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </pre>
+    <div class="wrap">
+        <div class="content"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAG</title>
+    <link rel="stylesheet" href="css/tag.css">
+</head>
+<body>
+    <!--[if lte IE 9]><div style="text-align: center; background-color: #e51c23;" >本相册只兼容到IE9+,chrome,firefox, 请到<a href="http://rj.baidu.com/soft/detail/14744.html?ald">这里</a>下载最新版本的chrome浏览器获取最佳的浏览体验</div><![endif]-->
+    <div class="wrap">
+        <h1>Tag插件</h1>
+        <ol>
+            <li>默认设定最高tag数为10个</li>
+            <li>超过10个自动删除最早添加的tag</li>
+            <li>重复输入tag自动忽略</li>
+            <li>点击Tag可进行删除</li>
+        </ol>
+        <label>Tags:(输入你的tag，用空格，逗号，回车分隔)<input type="text" id="tag-input"></label>
+        <div id="tag-wrap" class="tag-wrap" onselectstart="return false"></div>
+        <textarea id="interest-input" cols="30" rows="10" placeholder="输入你的tag，可用空格、逗号、回车分隔"></textarea>
+        <button id="interest-btn">添加</button>
+        <div id="interest-wrap" class="tag-wrap" onselectstart="return false"></div>
+    </div>
+    <script type="text/javascript" src="js/tag.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            function $ (id) {
+                return typeof id == 'string' && document.getElementById(id);
+            }
+
+            var tag1 = new Tag ({
+                tagInput: $('tag-input'),
+                wrap: $('tag-wrap')
+            })
+
+            var tag2 = new Tag ({
+                tagInput: $('interest-input'),
+                wrap: $('interest-wrap')
+            })
+
+            $('tag-input').onkeyup = function (event) {
+                var event = event || window.event;
+                var keyCode = event.keyCode;
+                if (keyCode == 13 || keyCode == 188 || (this.value.lastIndexOf(' ') != -1 && keyCode == 32)) {
+                    tag1.add();
+                }
+            }
+
+            $('tag-wrap').onclick = function (event) {
+                var event = event || window.event;
+                var target = event.target || event.srcElement;
+
+                if (target.className == 'tag') {
+                    tag1.del(target.getAttribute('index'));
+                }
+            }
+
+            $('interest-btn').onclick = function () {
+                tag2.add();
+            }
+
+            $('interest-wrap').onclick = function (event) {
+                var event = event || window.event;
+                var target = event.target || event.srcElement;
+
+                if (target.className == 'tag') {
+                    tag2.del(target.getAttribute('index'));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

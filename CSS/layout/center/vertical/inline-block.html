@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style type="text/css">
+        .wrap {
+            line-height: 200px;
+            font-size: 0;
+            background-color: green;
+        }
+
+        .content {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <pre class="code">
+        .wrap {
+            height: 200px;
+            line-height: 200px;
+            background-color: green;
+        }
+
+        .content {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </pre>
+    <div class="wrap">
+        <div class="content"></div>
+    </div>
+</body>
+</html>
